@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – Literature Review Assistant</title>
+  <meta name="description" content="Questions about the Literature Review Assistant prompt? Send a message.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="legal">
+    <div class="wrap narrow">
+      <a class="back link-arrow" href="index.html">Back to the start page</a>
+      <h1>Contact</h1>
+      <p>Questions about the prompt, a problem with your purchase or feedback? Send a message and I'll reply by email. Kontakt auf Deutsch ist ebenfalls möglich.</p>
+
+      <!-- Versand über FormSubmit (kostenlos, ohne Konto). Die erste Nachricht löst eine Aktivierungs-Mail an lachomx@icloud.com aus. -->
+      <form class="lead-form contact-form" action="https://formsubmit.co/lachomx@icloud.com" method="post">
+        <input type="hidden" name="_subject" value="Neue Nachricht über litreviewcoach.com">
+        <input type="hidden" name="_next" value="https://litreviewcoach.com/danke.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <!-- Falle für Spam-Bots: Menschen sehen das Feld nicht -->
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <label for="name">Name <span class="opt">(optional)</span></label>
+        <input id="name" name="name" type="text" autocomplete="name">
+
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <label class="consent">
+          <input type="checkbox" name="consent" value="yes" required>
+          <span>I agree that my details are used to answer my message. More in the <a href="datenschutz.html">privacy policy</a>.</span>
+        </label>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
