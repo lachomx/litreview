@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Literature Review Assistant – Prompt for Theses</title>
+  <meta name="description" content="A 7-phase prompt for ChatGPT and Claude: from thesis topic to tested search strings, a Zotero library and an APA 7 reference list. No invented sources.">
+  <!-- TODO: echte Domain eintragen (z. B. https://lachomx.github.io/litreview/) -->
+  <link rel="canonical" href="https://lachomx.github.io/litreview/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Literature Review Assistant – sources that actually exist">
+  <meta property="og:description" content="A 7-phase prompt for ChatGPT and Claude that guides your literature search step by step. $5.99 on PromptBase.">
+  <meta property="og:image" content="https://lachomx.github.io/litreview/og-image.png">
+  <meta property="og:url" content="https://lachomx.github.io/litreview/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Literature Review Assistant – sources that actually exist">
+  <meta name="twitter:description" content="From thesis topic to tested search strings and a finished reference list. $5.99 on PromptBase.">
+  <meta name="twitter:image" content="https://lachomx.github.io/litreview/og-image.png">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232F6FED'/%3E%3Ccircle cx='14' cy='14' r='6.5' fill='none' stroke='white' stroke-width='3'/%3E%3Cpath d='M19 19l6 6' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Is this allowed at my university?", "acceptedAnswer": {"@type": "Answer", "text": "That depends on your institution's rules on AI use. The prompt reminds you to check them and to disclose AI use where required. It never queries licensed databases for you and never downloads paywalled PDFs."}},
+      {"@type": "Question", "name": "Does it work without university access?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter \"none\" as your university and the prompt switches to open databases and legal routes such as open access, public libraries and interlibrary loan."}},
+      {"@type": "Question", "name": "Which citation styles are supported?", "acceptedAnswer": {"@type": "Answer", "text": "APA 7th Edition by default. You can set any other style, for example Harvard, Chicago, MLA or IEEE, and Zotero formats your reference list in it."}},
+      {"@type": "Question", "name": "Should I buy the ChatGPT or the Claude version?", "acceptedAnswer": {"@type": "Answer", "text": "Buy the version for the chatbot you use. Both follow the same 7 phases and rules. Turn on web search so the AI can check thesaurus terms and test search strings."}},
+      {"@type": "Question", "name": "Do I need Zotero experience?", "acceptedAnswer": {"@type": "Answer", "text": "No. Phase 2 walks you through installing and setting up Zotero with exact menu paths."}},
+      {"@type": "Question", "name": "Does the AI download paywalled PDFs for me?", "acceptedAnswer": {"@type": "Answer", "text": "No. You search licensed databases yourself. The prompt never suggests shadow libraries and points you to legal ways in: open-access versions, interlibrary loan or emailing the author."}},
+      {"@type": "Question", "name": "Will it write my thesis?", "acceptedAnswer": {"@type": "Answer", "text": "No. It plans and documents your literature search. Reading, judging and writing stay with you."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Literature Review Assistant, back to top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7"/><circle cx="14" cy="14" r="6.5"/><path d="M19 19l6 6"/></svg>
+        <span>Literature Review Assistant</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#how">How it works</a>
+        <a href="#example">Example</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="btn btn-small" type="button" data-buy>Get the prompt</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">A prompt for ChatGPT and Claude · for theses and literature reviews</p>
+          <h1>Your thesis deserves sources that actually&nbsp;exist.</h1>
+          <p class="lead">A 7-phase prompt that takes you from a vague topic to tested search strings, a tidy Zotero library and a reference list in APA&nbsp;7. Every source comes with a DOI, PMID or ISBN, or it gets flagged.</p>
+          <div class="cta-row">
+            <button class="btn" type="button" data-buy>Get the prompt – $5.99</button>
+            <a class="link-arrow" href="#example">See a real example</a>
+          </div>
+          <p class="fine">One-time purchase on PromptBase · versions for ChatGPT and Claude</p>
+        </div>
+
+        <figure class="paper reveal" aria-label="Illustration: a reference list where each source is checked">
+          <div class="paper-head">
+            <span>References</span>
+            <span class="paper-page">p. 47</span>
+          </div>
+          <ol class="refs">
+            <li>
+              <span class="ref-text">Hackney et al. (2022). Working in the digital economy: A systematic review of the impact of work from home arrangements on personal and organizational performance and productivity. <i>PLOS ONE, 17</i>(10).</span>
+              <span class="chip ok">DOI ✓</span>
+            </li>
+            <li>
+              <span class="ref-text">Qiu et al. (2017). <i>Frontiers in Physiology, 8</i>, 957. Meta-analysis on aerobic interval training in type 2 diabetes.</span>
+              <span class="chip ok">PMID ✓</span>
+            </li>
+            <li>
+              <span class="ref-text">Støa et al. (2017). <i>European Journal of Applied Physiology</i>. Interval training vs. moderate training in type 2 diabetes.</span>
+              <span class="chip ok">DOI ✓</span>
+            </li>
+            <li class="ref-flag">
+              <span class="ref-text">A source without DOI, PMID, ISBN or stable URL</span>
+              <span class="chip warn">UNVERIFIED – please check</span>
+            </li>
+          </ol>
+          <figcaption>Sources from the real example outputs. Rule&nbsp;1 of the prompt: never invent a source.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 1 PROBLEM -->
+    <section class="section" aria-labelledby="problem-h">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">1.</span>
+          <h2 id="problem-h">Sound familiar?</h2>
+        </header>
+        <div class="cards three">
+          <article class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M7 4v4M11 4v4"/></svg>
+            <h3>Forty tabs, no plan</h3>
+            <p>You search a bit everywhere, find something, lose it again, and can't say later how you found what you found.</p>
+          </article>
+          <article class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M9 12l6 6M15 12l-6 6"/></svg>
+            <h3>References that don't exist</h3>
+            <p>Chatbots can produce citations that look real but lead nowhere. One fake source in your reference list is one too many.</p>
+          </article>
+          <article class="card reveal">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L20 20"/><path d="M8.5 8.2a2 2 0 1 1 2.4 2c-.6.2-.9.6-.9 1.2"/><path d="M10 13.6v.1"/></svg>
+            <h3>Which database, which words?</h3>
+            <p>PubMed, Scopus, PsycINFO, Google Scholar: each has its own syntax. Synonyms, MeSH terms and Boolean operators are easy to get wrong.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 HOW IT WORKS -->
+    <section class="section alt" id="how" aria-labelledby="how-h">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">2.</span>
+          <h2 id="how-h">How it works: seven phases, one at a time</h2>
+        </header>
+        <p class="sec-intro reveal">Paste the prompt, fill in your topic, field and level. The AI works through one phase per answer, ends with a checklist and waits until you are ready for the next one.</p>
+        <ol class="timeline">
+          <li class="reveal"><span class="t-num">0</span><div><h3>Sharpen the question</h3><p>A searchable research question (PICO or another fitting framework), a concept table with synonyms and thesaurus terms, include/exclude criteria.</p></div></li>
+          <li class="reveal"><span class="t-num">1</span><div><h3>Get access</h3><p>VPN, institutional login or library proxy, explained for your system. No university? Legal open-access routes instead.</p></div></li>
+          <li class="reveal"><span class="t-num">2</span><div><h3>Set up Zotero</h3><p>Install Zotero and the browser connector, with exact menu paths for metadata, PDF retrieval and your citation style.</p></div></li>
+          <li class="reveal"><span class="t-num">3</span><div><h3>Build the search</h3><p>Database recommendations for your field and a ready-to-paste search string for each one. With web search on, strings for open databases are tested with real hit counts.</p></div></li>
+          <li class="reveal"><span class="t-num">4</span><div><h3>Import and screen</h3><p>A collection and tag scheme for Zotero, then step-by-step import and screening against your criteria.</p></div></li>
+          <li class="reveal"><span class="t-num">5</span><div><h3>Cite in Word</h3><p>Zotero's Word plugin, your first citation and a reference list in APA&nbsp;7 or any style you choose.</p></div></li>
+          <li class="reveal"><span class="t-num">6</span><div><h3>Wrap up</h3><p>A final checklist and a short summary of your search for the methods chapter.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 3 EXAMPLE -->
+    <section class="section" id="example" aria-labelledby="example-h">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">3.</span>
+          <h2 id="example-h">Real output from the prompt</h2>
+        </header>
+        <p class="sec-intro reveal">Two excerpts, shortened but not edited. Nothing here was written for this page.<sup class="fn"><a href="#n1" id="r1">1</a></sup></p>
+
+        <figure class="figure reveal">
+          <figcaption class="fig-cap"><b>Figure 1.</b> Phase&nbsp;0, concept table (excerpt). Topic: <i>Does mindfulness training reduce exam anxiety in university students?</i> Master's thesis, psychology.</figcaption>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Concept table, scrollable">
+            <table class="booktabs concept">
+              <thead>
+                <tr><th scope="col">Concept</th><th scope="col">Free-text synonyms</th><th scope="col">MeSH (PubMed)</th><th scope="col">ERIC descriptor</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Mindfulness (I)</th>
+                  <td>mindfulness, mindful*, MBSR, MBCT, "mindfulness-based stress reduction", meditation, "body scan" […]</td>
+                  <td><b>Mindfulness</b> D064866 <span class="chip ok">checked</span><br><b>Mindfulness-Based Stress Reduction</b> D000099024 <span class="chip ok">checked</span><br><b>Meditation</b> D019122 <span class="chip ok">checked</span></td>
+                  <td>"Mindfulness" is <b>not a descriptor</b>: ERIC says to use <b>Metacognition</b> instead <span class="chip ok">checked</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Exam anxiety (O)</th>
+                  <td>"test anxiety", "exam anxiety", "examination stress", "test-taking anxiety", "evaluation anxiety" […]</td>
+                  <td><b>Test Anxiety</b> D000083563 <span class="chip ok">checked</span><br>broader: <b>Performance Anxiety</b> D060805 <span class="chip ok">checked</span></td>
+                  <td><b>Test Anxiety</b> <span class="chip ok">checked</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <blockquote class="pitfall">
+            <p class="pitfall-label">Vocabulary pitfall from the same answer</p>
+            <p>"Test Anxiety" in MeSH only exists since 2021. Before that, NLM indexed these papers under the general term "Anxiety" (1963–2020). Papers from 2016–2020 therefore won't carry the Test Anxiety heading. Free-text terms ([tiab]) are essential.</p>
+          </blockquote>
+        </figure>
+
+        <figure class="figure reveal">
+          <figcaption class="fig-cap"><b>Figure 2.</b> Phase&nbsp;3, PubMed search string, tested on 30&nbsp;Oct 2026. Topic: HIIT and cardiorespiratory fitness in type&nbsp;2 diabetes, sport science.</figcaption>
+          <div class="code-wrap">
+            <div class="code-bar"><span>String 1 – PubMed (main, tested)</span><button class="copy" type="button" data-copy="#pubmed">Copy</button></div>
+            <pre class="code" id="pubmed" data-hl>("Diabetes Mellitus, Type 2"[mh] OR "type 2 diabet*"[tiab] OR "type II diabet*"[tiab] OR T2DM[tiab] OR T2D[tiab] OR NIDDM[tiab] OR "non-insulin-dependent diabet*"[tiab] OR "noninsulin dependent diabet*"[tiab] OR "adult-onset diabet*"[tiab])
+AND
+("High-Intensity Interval Training"[mh] OR "high-intensity interval*"[tiab] OR "high intensity interval*"[tiab] OR HIIT[tiab] OR "interval training"[tiab] OR "interval exercise*"[tiab] OR "intermittent exercise*"[tiab] OR "high-intensity intermittent*"[tiab] OR "sprint interval*"[tiab] OR "aerobic interval*"[tiab] OR REHIT[tiab])
+NOT (animals[mh] NOT humans[mh])
+NOT (mice[ti] OR mouse[ti] OR rat[ti] OR rats[ti] OR murine[ti])
+AND 2015:3000[dp]
+AND (english[la] OR german[la])</pre>
+          </div>
+          <dl class="stats">
+            <div><dt>PubMed hits</dt><dd>355</dd></div>
+            <div><dt>Known-item test</dt><dd>RCT and meta-analysis found</dd></div>
+            <div><dt>Noise removed</dt><dd>"HIT", "SIT", animal studies</dd></div>
+          </dl>
+          <p class="fig-note">The first version used an RCT filter and missed a relevant trial whose abstract says neither "random*" nor "trial". The AI noticed it in the known-item test, removed the filter and said why.</p>
+        </figure>
+
+        <ol class="notes">
+          <li id="n1">Generated with Claude, web search on, 30&nbsp;Oct 2026, with the version of the prompt sold on PromptBase. More example outputs are on the PromptBase listing. <a href="#r1" aria-label="Back to text">↩</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4 COMPARISON -->
+    <section class="section alt" aria-labelledby="cmp-h">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">4.</span>
+          <h2 id="cmp-h">One-line prompt vs. this prompt</h2>
+        </header>
+        <p class="sec-intro reveal">We asked ChatGPT: <i>"Find sources for my bachelor's thesis on productivity effects of remote and hybrid work."</i> The sources it gave were real. What was missing is the part your methods chapter needs.<sup class="fn"><a href="#n2" id="r2">2</a></sup></p>
+        <div class="table-scroll reveal" tabindex="0" role="region" aria-label="Comparison table, scrollable">
+          <table class="booktabs compare">
+            <thead>
+              <tr><th scope="col"></th><th scope="col">One-line prompt</th><th scope="col">Literature Review Assistant</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Result</th><td>A list of sources to start with</td><td>A documented search you can repeat and report</td></tr>
+              <tr><th scope="row">Research question</th><td>Taken as typed</td><td>Sharpened with PICO or a fitting framework</td></tr>
+              <tr><th scope="row">Thesaurus terms</th><td>None</td><td>MeSH, ERIC, APA Thesaurus, marked "checked" or "(verify)"</td></tr>
+              <tr><th scope="row">Search strings</th><td>None</td><td>One per database, in its own syntax</td></tr>
+              <tr><th scope="row">Testing</th><td>None</td><td>Hit counts and a known-item test in open databases</td></tr>
+              <tr><th scope="row">Source rule</th><td>Not stated</td><td>DOI, PMID, ISBN or URL, or flagged "UNVERIFIED"</td></tr>
+              <tr><th scope="row">Next steps</th><td>Up to you</td><td>Zotero setup, screening, citing in Word</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ol class="notes" start="2">
+          <li id="n2">ChatGPT, shared chat, retrieved 30&nbsp;Oct 2026. Model not shown in the shared link. <a href="#r2" aria-label="Back to text">↩</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5 FOR WHOM -->
+    <section class="section" aria-labelledby="fit-h">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">5.</span>
+          <h2 id="fit-h">Is it for you?</h2>
+        </header>
+        <div class="cards two">
+          <div class="card reveal">
+            <h3 class="fit-yes">Made for</h3>
+            <ul class="ticks">
+              <li>Bachelor's and master's theses, seminar papers, PhD chapters</li>
+              <li>Systematic and scoping reviews that need a documented search</li>
+              <li>Any field: psychology, health, sport, education, business and more</li>
+              <li>Students with or without university database access</li>
+              <li>Answers in your language, references in your citation style</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3 class="fit-no">Not made for</h3>
+            <ul class="crosses">
+              <li>Writing your thesis for you: reading and judging stay with you</li>
+              <li>Getting around paywalls: only legal routes, no shadow libraries</li>
+              <li>Searching licensed databases for you: you run those searches yourself</li>
+            </ul>
+          </div>
+        </div>
+        <div class="inside reveal">
+          <h3>What you get</h3>
+          <ul class="inside-list">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7"/></svg><span>The full prompt, as a version for ChatGPT or for Claude</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>Nine fixed rules: no invented sources, licence terms, copyright, privacy, academic integrity</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L20 20"/></svg><span>Works with or without web search. Without it, terms are marked "(verify)" and strings "not tested"</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6l2 2 3-3M5 13l2 2 3-3"/><path d="M13 7h6M13 14h6"/></svg><span>A checklist at the end of every phase, so you always know where you are</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 LEAD MAGNET -->
+    <section class="section alt" id="cheatsheet" aria-labelledby="lead-h">
+      <div class="wrap lead-grid">
+        <div class="reveal">
+          <header class="sec-head">
+            <span class="sec-num">6.</span>
+            <h2 id="lead-h">Free: Search String Cheat Sheet</h2>
+          </header>
+          <p>One page with Boolean operators, truncation, phrase search and field tags for PubMed, Scopus, Web of Science, EBSCO and Google Scholar. Print it, pin it next to your screen.</p>
+        </div>
+        <!-- TODO: action auf den Formular-Endpunkt des Newsletter-Anbieters setzen (z. B. Brevo oder MailerLite, Double-Opt-in aktivieren), dann "disabled" entfernen und data-ready="true" setzen. -->
+        <form class="lead-form reveal" action="[FORM_ENDPOINT]" method="post" data-ready="false">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@university.edu" required disabled>
+          <label class="consent">
+            <input type="checkbox" name="consent" required disabled>
+            <span>Send me the cheat sheet and occasional tips on literature searching. I can unsubscribe at any time. See the <a href="datenschutz.html">privacy policy</a>.</span>
+          </label>
+          <button class="btn" type="submit" disabled>Coming soon</button>
+          <p class="fine">You'll get a confirmation email first (double opt-in).</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <div class="wrap narrow">
+        <header class="sec-head reveal">
+          <span class="sec-num">7.</span>
+          <h2 id="faq-h">Questions</h2>
+        </header>
+        <div class="faq reveal">
+          <details><summary>Is this allowed at my university?</summary><p>That depends on your institution's rules on AI use. The prompt reminds you to check them and to disclose AI use where required. It never queries licensed databases for you and never downloads paywalled PDFs.</p></details>
+          <details><summary>Does it work without university access?</summary><p>Yes. Enter "none" as your university and the prompt switches to open databases and legal routes such as open access, public libraries and interlibrary loan.</p></details>
+          <details><summary>Which citation styles are supported?</summary><p>APA 7th Edition by default. You can set any other style, for example Harvard, Chicago, MLA or IEEE, and Zotero formats your reference list in it.</p></details>
+          <details><summary>ChatGPT or Claude version?</summary><p>Buy the version for the chatbot you use. Both follow the same 7 phases and rules. Turn on web search so the AI can check thesaurus terms and test search strings.</p></details>
+          <details><summary>Do I need Zotero experience?</summary><p>No. Phase&nbsp;2 walks you through installing and setting up Zotero with exact menu paths.</p></details>
+          <details><summary>Does the AI download paywalled PDFs for me?</summary><p>No. You search licensed databases yourself. The prompt never suggests shadow libraries and points you to legal ways in: open-access versions, interlibrary loan or emailing the author.</p></details>
+          <details><summary>Will it write my thesis?</summary><p>No. It plans and documents your literature search. Reading, judging and writing stay with you.</p></details>
+          <details><summary>Can I get a refund?</summary><p>Purchases run through PromptBase, so PromptBase's terms apply.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final">
+      <div class="wrap narrow final-inner reveal">
+        <h2>Start your search with a plan.</h2>
+        <p>Seven phases, tested strings, sources you can check.</p>
+        <button class="btn btn-light" type="button" data-buy>Get the prompt – $5.99</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span data-year>2026</span> Literature Review Assistant</p>
+      <nav aria-label="Legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <button class="linklike" type="button" data-cookie-settings hidden>Cookie settings</button>
+      </nav>
+      <p class="fine">Not affiliated with OpenAI, Anthropic, Zotero or PromptBase.</p>
+    </div>
+  </footer>
+
+  <!-- Version wählen -->
+  <dialog class="chooser" id="chooser" aria-labelledby="chooser-h">
+    <form method="dialog" class="chooser-inner">
+      <button class="close" value="close" aria-label="Close">×</button>
+      <h2 id="chooser-h">Which chatbot do you use?</h2>
+      <p>Same prompt, same 7 phases. Pick the version for your chatbot.</p>
+      <div class="chooser-options">
+        <a class="option" data-listing="chatgpt" href="https://promptbase.com/" target="_blank" rel="noopener">
+          <b>ChatGPT version</b><span>$5.99 on PromptBase</span>
+        </a>
+        <a class="option" data-listing="claude" href="https://promptbase.com/" target="_blank" rel="noopener">
+          <b>Claude version</b><span>$5.99 on PromptBase</span>
+        </a>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Cookie-Banner: erscheint nur, wenn in script.js eine Pixel-ID eingetragen ist -->
+  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-labelledby="cookie-h" hidden>
+    <h2 id="cookie-h">Cookies and tracking</h2>
+    <p>With your consent we use the Meta and TikTok pixels to measure which ads bring visitors. Without consent, nothing is tracked. Details in the <a href="datenschutz.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost" type="button" data-consent="no">Reject</button>
+      <button class="btn btn-ghost" type="button" data-consent="yes">Accept</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
