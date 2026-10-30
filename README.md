@@ -7,7 +7,7 @@ Statische Seite für GitHub Pages, ohne Build-Schritt. Lokal ansehen: `python3 -
 |---|---|
 | `script.js` → `CONFIG.listings` | Links zum ChatGPT- und zum Claude-Listing auf PromptBase (bis dahin führen die Buttons auf promptbase.com) |
 | `script.js` → `metaPixelId`, `tiktokPixelId` | Pixel-IDs. Erst wenn eine eingetragen ist, erscheint das Cookie-Banner. |
-| `index.html` → Domain | eingetragen: `https://lachomx.github.io/litreview` (bei eigener Domain ersetzen) |
+| `index.html` → Domain | eingetragen: `https://litreviewcoach.com` (Domain bei INWX, DNS auf GitHub Pages) |
 | `index.html` → Formular `[FORM_ENDPOINT]` | Endpunkt von Brevo/MailerLite mit Double-Opt-in, dann `disabled` an Feld, Checkbox und Button entfernen und den Button-Text auf „Send me the cheat sheet“ ändern |
 | `impressum.html` | Name, Anschrift, E-Mail |
 | `datenschutz.html` | Name, Anschrift, Newsletter-Anbieter, Datum; nicht genutzte Abschnitte löschen; Text prüfen lassen |
