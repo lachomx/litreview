@@ -5,7 +5,7 @@ const CONFIG = {
   listings: {
     claude: "https://promptbase.com/prompt/literature-review-assistant-with-zotero-2", // ein Listing, funktioniert auch in ChatGPT
   },
-  metaPixelId: "249899463203808", // Meta-Pixel (Events Manager)
+  metaPixelId: "2086922485279992", // Meta-Pixel (Events Manager)
   tiktokPixelId: "", // TODO: TikTok-Pixel-ID
 };
 

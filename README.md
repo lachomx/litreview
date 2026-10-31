@@ -6,7 +6,7 @@ Statische Seite für GitHub Pages, ohne Build-Schritt. Lokal ansehen: `python3 -
 | Wo | Was |
 |---|---|
 | `script.js` → `CONFIG.listings` | eingetragen: Claude-Listing auf PromptBase (einziges Listing; das ChatGPT-Listing wurde als Duplikat abgelehnt). Alle Kauf-Buttons führen direkt dorthin. |
-| `script.js` → `metaPixelId`, `tiktokPixelId` | Meta-Pixel eingetragen (31.10., ID 249899463203808), Cookie-Banner aktiv. TikTok-ID noch leer; dann Banner-Text in `index.html` und TikTok-Abschnitt in `datenschutz.html` einblenden. |
+| `script.js` → `metaPixelId`, `tiktokPixelId` | Meta-Pixel eingetragen (31.10., ID 2086922485279992, Datensatz „LitReview Coach Pixel“ im Portfolio Litreview.coach), Cookie-Banner aktiv. TikTok-ID noch leer; dann Banner-Text in `index.html` und TikTok-Abschnitt in `datenschutz.html` einblenden. |
 | `index.html` → Domain | eingetragen: `https://litreviewcoach.com` (Domain bei INWX, DNS auf GitHub Pages) |
 | `index.html` → Formular `[FORM_ENDPOINT]` | Endpunkt von Brevo/MailerLite mit Double-Opt-in, dann `disabled` an Feld, Checkbox und Button entfernen und den Button-Text auf „Send me the cheat sheet“ ändern |
 | `impressum.html` | ausgefüllt (31.10.) |
