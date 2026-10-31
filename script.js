@@ -3,8 +3,7 @@
 // ===== Hier eintragen =====
 const CONFIG = {
   listings: {
-    chatgpt: "", // TODO: Link zum ChatGPT-Listing auf PromptBase
-    claude: "",  // TODO: Link zum Claude-Listing auf PromptBase
+    claude: "https://promptbase.com/prompt/literature-review-assistant-with-zotero-2", // ein Listing, funktioniert auch in ChatGPT
   },
   metaPixelId: "",   // TODO: Meta-Pixel-ID (leer = kein Pixel, kein Cookie-Banner)
   tiktokPixelId: "", // TODO: TikTok-Pixel-ID
@@ -33,17 +32,6 @@ document.querySelectorAll("[data-listing]").forEach((a) => {
   if (url) a.href = withUtm(url);
   a.addEventListener("click", () => track("click_buy", { version: a.dataset.listing }));
 });
-
-// ----- Auswahl-Dialog -----
-const chooser = document.getElementById("chooser");
-document.querySelectorAll("[data-buy]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    track("open_chooser");
-    if (typeof chooser.showModal === "function") chooser.showModal();
-    else chooser.setAttribute("open", "");
-  });
-});
-chooser.addEventListener("click", (e) => { if (e.target === chooser) chooser.close(); });
 
 // ----- Suchstring hervorheben und kopieren -----
 function escapeHtml(s) {
