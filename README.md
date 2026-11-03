@@ -10,6 +10,7 @@ Statische Seite für GitHub Pages, ohne Build-Schritt. Lokal ansehen: `python3 -
 | `index.html` → Domain | eingetragen: `https://litreviewcoach.com` (Domain bei INWX, DNS auf GitHub Pages) |
 | `index.html` → Formular `[FORM_ENDPOINT]` | Endpunkt von Brevo/MailerLite mit Double-Opt-in, dann `disabled` an Feld, Checkbox und Button entfernen und den Button-Text auf „Send me the cheat sheet“ ändern |
 | `impressum.html` | ausgefüllt (31.10.) |
+| `script.js` → `goatcounterCode` | Cookiefreie Besucherzählung (GoatCounter, ohne Einwilligung, Datenschutz Abschnitt 6). Code = Subdomain des GoatCounter-Kontos (`https://CODE.goatcounter.com`). Zählt Seitenaufrufe, Kampagnen (utm_campaign/utm_source automatisch) und Kauf-Klicks als Ereignis `click-buy-claude`. Eigene Besuche ausschließen: einmal `https://litreviewcoach.com/#toggle-goatcounter` aufrufen. |
 | `datenschutz.html` | ausgefüllt; Pixel- und Newsletter-Abschnitte liegen auskommentiert im Code und werden mit Pixel-ID bzw. Formular eingeblendet |
 | `kontakt.html` | Formular über FormSubmit an lachomx@icloud.com; die erste Nachricht löst eine Aktivierungs-Mail aus |
 

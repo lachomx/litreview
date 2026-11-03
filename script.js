@@ -7,6 +7,7 @@ const CONFIG = {
   },
   metaPixelId: "2086922485279992", // Meta-Pixel (Events Manager)
   tiktokPixelId: "", // TODO: TikTok-Pixel-ID
+  goatcounterCode: "litreviewcoach", // GoatCounter (https://litreviewcoach.goatcounter.com), cookiefrei, ohne Einwilligung
 };
 
 const CONSENT_KEY = "lra-consent"; // "yes" | "no"
@@ -105,8 +106,22 @@ function loadPixels() {
   }
 }
 
-// Ereignisse nur mit Einwilligung senden
+// ----- Besucherzählung ohne Cookies (GoatCounter) -----
+// Speichert nichts im Browser und keine IP-Adressen, deshalb ohne Einwilligung (Datenschutz Abschnitt 6).
+if (CONFIG.goatcounterCode) {
+  const gc = document.createElement("script");
+  gc.async = true;
+  gc.src = "https://gc.zgo.at/count.js";
+  gc.dataset.goatcounter = `https://${CONFIG.goatcounterCode}.goatcounter.com/count`;
+  document.head.appendChild(gc);
+}
+
+// Ereignisse: GoatCounter immer, Pixel nur mit Einwilligung
 function track(name, data = {}) {
+  if (window.goatcounter && window.goatcounter.count) {
+    const path = [name, data.version].filter(Boolean).join("-").replace(/_/g, "-");
+    window.goatcounter.count({ path, title: name, event: true });
+  }
   if (!pixelsLoaded) return;
   if (window.fbq) fbq("trackCustom", name, data);
   if (window.ttq) ttq.track(name === "click_buy" ? "ClickButton" : name, data);
