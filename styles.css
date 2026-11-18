@@ -234,6 +234,8 @@ sup.fn a { text-decoration: none; font-weight: 600; }
 .footer-inner p { margin: 0; }
 .footer-inner nav { display: flex; gap: 20px; flex-wrap: wrap; }
 .footer-inner nav a { color: var(--ink-soft); }
+.yt-link { display: inline-flex; align-items: center; gap: 6px; }
+.yt-icon { flex: none; }
 .footer-inner .fine { flex-basis: 100%; }
 
 
