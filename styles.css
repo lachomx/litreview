@@ -263,6 +263,15 @@ sup.fn a { text-decoration: none; font-weight: 600; }
   * { transition: none !important; }
 }
 
+/* Nutzerstimme */
+.review { margin: 0; }
+.review-pull { font-family: var(--serif); font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.35; color: var(--ink); margin: 8px 0 28px; padding-left: 20px; border-left: 3px solid var(--accent); }
+.review-text { margin: 0; padding: 26px 28px; background: var(--bg-alt); border: 1px solid var(--rule); border-radius: var(--radius); }
+.review-text p { font-family: var(--serif); color: var(--ink-soft); }
+.review-text p:last-child { margin-bottom: 0; }
+.review-by { margin-top: 14px; color: var(--ink-mute); font-size: .95rem; }
+.review-by b { color: var(--ink); }
+
 /* Responsiv */
 @media (max-width: 940px) {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
