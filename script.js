@@ -3,7 +3,7 @@
 // ===== Hier eintragen =====
 const CONFIG = {
   listings: {
-    claude: "https://promptbase.com/prompt/literature-review-assistant-with-zotero-2", // ein Listing, funktioniert auch in ChatGPT
+    claude: "https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00", // Stripe-Zahlungslink (Managed Payments, live), funktioniert auch in ChatGPT
   },
   metaPixelId: "2086922485279992", // Meta-Pixel (Events Manager)
   tiktokPixelId: "", // TODO: TikTok-Pixel-ID
@@ -24,6 +24,7 @@ function storageSet(key, value) {
 function withUtm(url) {
   const params = new URLSearchParams(location.search);
   const out = new URL(url);
+  // Stripe-Zahlungslinks übernehmen utm_source, utm_medium, utm_campaign, utm_content und utm_term direkt in die Zahlung
   UTM_KEYS.forEach((k) => { if (params.has(k)) out.searchParams.set(k, params.get(k)); });
   return out.toString();
 }
