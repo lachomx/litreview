@@ -224,6 +224,7 @@ sup.fn a { text-decoration: none; font-weight: 600; }
 .review-more summary::after { content: "↓"; margin-left: 8px; }
 .review-more[open] summary::after { content: "↑"; }
 .review-text { margin: 12px 0 0; padding: 26px 28px; background: var(--bg-alt); border-radius: var(--radius); }
+.alt .review-text { background: #fff; }
 .review-text p { font-family: var(--serif); color: var(--ink-soft); }
 .review-text p:last-child { margin-bottom: 0; }
 
