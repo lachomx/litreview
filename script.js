@@ -133,15 +133,53 @@ if (CONFIG.goatcounterCode) {
   document.head.appendChild(gc);
 }
 
-// Ereignisse: GoatCounter immer, Pixel nur mit Einwilligung
+// Ereignisse an GoatCounter; frühe Ereignisse warten, bis count.js geladen ist
+const gcWarteschlange = [];
+function gcEvent(path, title) {
+  if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title, event: true });
+  else gcWarteschlange.push([path, title]);
+}
+if (CONFIG.goatcounterCode) {
+  const flush = setInterval(() => {
+    if (!(window.goatcounter && window.goatcounter.count)) return;
+    clearInterval(flush);
+    gcWarteschlange.splice(0).forEach(([p, t]) => gcEvent(p, t));
+  }, 500);
+  setTimeout(() => clearInterval(flush), 20000); // Blocker aktiv: aufgeben
+}
+
+// Kauf-Klick: GoatCounter immer, Pixel nur mit Einwilligung
 function track(name, data = {}) {
-  if (window.goatcounter && window.goatcounter.count) {
-    const path = [name, data.version].filter(Boolean).join("-").replace(/_/g, "-");
-    window.goatcounter.count({ path, title: name, event: true });
-  }
+  gcEvent([name, data.version].filter(Boolean).join("-").replace(/_/g, "-"), name);
   if (!pixelsLoaded) return;
   if (window.fbq) fbq("trackCustom", name, data);
   if (window.ttq) ttq.track(name === "click_buy" ? "ClickButton" : name, data);
+}
+
+// ----- Verweildauer und gelesene Abschnitte (nur GoatCounter, cookiefrei, nicht an Pixel) -----
+// Zeit zählt nur, solange der Tab sichtbar ist. Jede Stufe und jeder Abschnitt zählt pro Aufruf höchstens einmal.
+const ZEIT_STUFEN = [[30, "30s"], [60, "1min"], [180, "3min"]];
+let sichtbarSek = 0;
+const zeitTimer = setInterval(() => {
+  if (document.visibilityState !== "visible") return;
+  sichtbarSek += 1;
+  ZEIT_STUFEN.forEach(([s, name]) => { if (sichtbarSek === s) gcEvent(`zeit-${name}`, "Verweildauer"); });
+  if (sichtbarSek >= ZEIT_STUFEN[ZEIT_STUFEN.length - 1][0]) clearInterval(zeitTimer);
+}, 1000);
+
+if ("IntersectionObserver" in window) {
+  // Abschnitt gilt als gesehen, sobald er die Bildschirmmitte erreicht
+  const so = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      so.unobserve(en.target);
+      gcEvent(`abschnitt-${en.target.id}`, "Abschnitt gesehen");
+    });
+  }, { rootMargin: "-45% 0px -45% 0px" });
+  ["review", "how", "example", "offer", "faq", "final"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) so.observe(el);
+  });
 }
 
 function showBanner() { banner.hidden = false; }
