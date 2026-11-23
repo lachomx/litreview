@@ -74,6 +74,22 @@ if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: re
   reveals.forEach((el) => el.classList.add("in"));
 }
 
+// ----- Kaufbalken mobil: sichtbar zwischen Hero und Abschluss-CTA -----
+const buybar = document.getElementById("buybar");
+const heroEl = document.getElementById("top");
+const finalEl = document.getElementById("final");
+if (buybar && heroEl && finalEl && "IntersectionObserver" in window) {
+  let heroVisible = true, finalVisible = false;
+  const update = () => {
+    const show = !heroVisible && !finalVisible;
+    buybar.classList.toggle("show", show);
+    buybar.setAttribute("aria-hidden", show ? "false" : "true");
+    buybar.querySelector("a").tabIndex = show ? 0 : -1;
+  };
+  new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }).observe(heroEl);
+  new IntersectionObserver(([e]) => { finalVisible = e.isIntersecting; update(); }).observe(finalEl);
+}
+
 document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 
 // ----- Einwilligung und Pixel -----

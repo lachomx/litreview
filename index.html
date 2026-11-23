@@ -15,8 +15,9 @@
   <meta name="twitter:title" content="Literature Review Assistant – sources that actually exist">
   <meta name="twitter:description" content="From thesis topic to tested search strings and a finished reference list. $4.99, one-time purchase.">
   <meta name="twitter:image" content="https://litreviewcoach.com/og-image.png">
-  <meta name="theme-color" content="#FFFFFF">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232F6FED'/%3E%3Ccircle cx='14' cy='14' r='6.5' fill='none' stroke='white' stroke-width='3'/%3E%3Cpath d='M19 19l6 6' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0F1B33">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1B33'/%3E%3Ccircle cx='14' cy='14' r='6.5' fill='none' stroke='%23F2B35C' stroke-width='3'/%3E%3Cpath d='M19 19l6 6' stroke='%23F2B35C' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="img/hero.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
@@ -49,59 +50,57 @@
         <a href="#review">Review</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn-small" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get the prompt</a>
+      <a class="btn btn-small" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get it – $4.99</a>
     </div>
   </header>
 
   <main id="main">
     <!-- HERO -->
     <section class="hero" id="top">
-      <div class="wrap hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">A prompt for ChatGPT and Claude · for theses and literature reviews</p>
+      <picture class="hero-media">
+        <source srcset="img/hero.webp" type="image/webp">
+        <img src="img/hero.jpg" width="1536" height="1024" fetchpriority="high" alt="A student at a desk in the evening, calmly working through a tidy reference list on a laptop.">
+      </picture>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">For ChatGPT &amp; Claude · theses and literature reviews</p>
           <h1>Your thesis deserves sources that actually&nbsp;exist.</h1>
-          <p class="lead">A 7-phase prompt that takes you from a vague topic to tested search strings, a tidy Zotero library and a reference list in APA&nbsp;7. Every source comes with a DOI, PMID or ISBN, or it gets flagged.</p>
+          <p class="lead">One prompt takes you from a vague topic to tested search strings, a tidy Zotero library and a reference list in APA&nbsp;7, in seven guided phases. Every source comes with a DOI, PMID or ISBN, or it gets flagged.</p>
           <div class="cta-row">
-            <a class="btn" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get the prompt – $4.99</a>
-            <a class="link-arrow" href="#example">See a real example</a>
+            <a class="btn btn-cta btn-lg" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get the prompt – $4.99</a>
+            <a class="link-arrow light" href="#example">See real output</a>
           </div>
-          <p class="fine">One-time purchase · plus tax where applicable · secure checkout via Stripe · works in ChatGPT and Claude</p>
+          <ul class="assure">
+            <li>One-time payment</li>
+            <li>PDF in your inbox right away</li>
+            <li>Secure checkout via Stripe</li>
+          </ul>
         </div>
 
-        <figure class="paper reveal" aria-label="Illustration: a reference list where each source is checked">
-          <div class="paper-head">
-            <span>References</span>
-            <span class="paper-page">p. 47</span>
-          </div>
-          <ol class="refs">
-            <li>
-              <span class="ref-text">Hackney et al. (2022). Working in the digital economy: A systematic review of the impact of work from home arrangements on personal and organizational performance and productivity. <i>PLOS ONE, 17</i>(10).</span>
-              <span class="chip ok">DOI ✓</span>
-            </li>
-            <li>
-              <span class="ref-text">Qiu et al. (2017). <i>Frontiers in Physiology, 8</i>, 957. Meta-analysis on aerobic interval training in type 2 diabetes.</span>
-              <span class="chip ok">PMID ✓</span>
-            </li>
-            <li>
-              <span class="ref-text">Støa et al. (2017). <i>European Journal of Applied Physiology</i>. Interval training vs. moderate training in type 2 diabetes.</span>
-              <span class="chip ok">DOI ✓</span>
-            </li>
-            <li class="ref-flag">
-              <span class="ref-text">A source without DOI, PMID, ISBN or stable URL</span>
-              <span class="chip warn">UNVERIFIED – please check</span>
-            </li>
-          </ol>
-          <figcaption>Sources from the real example outputs. Rule&nbsp;1 of the prompt: never invent a source.</figcaption>
-        </figure>
+        <div class="proof-stack" aria-label="Every source is checked: DOI, PMID or flagged as unverified">
+          <div class="proof"><span class="proof-dot ok"></span><span class="proof-txt">Hackney et al. (2022). <i>PLOS ONE</i></span><span class="chip ok">DOI ✓</span></div>
+          <div class="proof"><span class="proof-dot ok"></span><span class="proof-txt">Qiu et al. (2017). <i>Front. Physiol.</i></span><span class="chip ok">PMID ✓</span></div>
+          <div class="proof"><span class="proof-dot warn"></span><span class="proof-txt">Source without identifier</span><span class="chip warn">UNVERIFIED</span></div>
+        </div>
       </div>
     </section>
 
-    <!-- 1 PROBLEM -->
+    <!-- VERTRAUENSLEISTE -->
+    <section class="trustbar" aria-label="Key facts">
+      <ul class="wrap trust-list">
+        <li><b>7</b><span>guided phases</span></li>
+        <li><b>ChatGPT + Claude</b><span>one prompt, tested in both</span></li>
+        <li><b>Zotero</b><span>set up step by step</span></li>
+        <li><b>APA 7</b><span>or any citation style</span></li>
+      </ul>
+    </section>
+
+    <!-- PROBLEM -->
     <section class="section" aria-labelledby="problem-h">
       <div class="wrap">
-        <header class="sec-head reveal">
-          <span class="sec-num">1.</span>
-          <h2 id="problem-h">Sound familiar?</h2>
+        <header class="sec-head center reveal">
+          <p class="kicker">The problem</p>
+          <h2 id="problem-h">The literature search is where theses stall.</h2>
         </header>
         <div class="cards three">
           <article class="card reveal">
@@ -123,14 +122,14 @@
       </div>
     </section>
 
-    <!-- 2 HOW IT WORKS -->
+    <!-- HOW IT WORKS -->
     <section class="section alt" id="how" aria-labelledby="how-h">
       <div class="wrap">
-        <header class="sec-head reveal">
-          <span class="sec-num">2.</span>
-          <h2 id="how-h">How it works: seven phases, one at a time</h2>
+        <header class="sec-head center reveal">
+          <p class="kicker">How it works</p>
+          <h2 id="how-h">Seven phases, one at a time.</h2>
+          <p class="sec-intro">Paste the prompt, fill in your topic, field and level. The AI works through one phase per answer, ends with a checklist and waits until you are ready for the next one.</p>
         </header>
-        <p class="sec-intro reveal">Paste the prompt, fill in your topic, field and level. The AI works through one phase per answer, ends with a checklist and waits until you are ready for the next one.</p>
         <ol class="timeline">
           <li class="reveal"><span class="t-num">0</span><div><h3>Sharpen the question</h3><p>A searchable research question (PICO or another fitting framework), a concept table with synonyms and thesaurus terms, include/exclude criteria.</p></div></li>
           <li class="reveal"><span class="t-num">1</span><div><h3>Get access</h3><p>VPN, institutional login or library proxy, explained for your system. No university? Legal open-access routes instead.</p></div></li>
@@ -140,17 +139,20 @@
           <li class="reveal"><span class="t-num">5</span><div><h3>Cite in Word</h3><p>Zotero's Word plugin, your first citation and a reference list in APA&nbsp;7 or any style you choose.</p></div></li>
           <li class="reveal"><span class="t-num">6</span><div><h3>Wrap up</h3><p>A final checklist and a short summary of your search for the methods chapter.</p></div></li>
         </ol>
+        <div class="inline-cta reveal">
+          <a class="btn btn-cta" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Start phase 0 today – $4.99</a>
+        </div>
       </div>
     </section>
 
-    <!-- 3 EXAMPLE -->
+    <!-- EXAMPLE -->
     <section class="section" id="example" aria-labelledby="example-h">
       <div class="wrap">
-        <header class="sec-head reveal">
-          <span class="sec-num">3.</span>
-          <h2 id="example-h">Real output from the prompt</h2>
+        <header class="sec-head center reveal">
+          <p class="kicker">Proof</p>
+          <h2 id="example-h">Real output from the prompt.</h2>
+          <p class="sec-intro">Two excerpts, shortened but not edited. Nothing here was written for this page.<sup class="fn"><a href="#n1" id="r1">1</a></sup></p>
         </header>
-        <p class="sec-intro reveal">Two excerpts, shortened but not edited. Nothing here was written for this page.<sup class="fn"><a href="#n1" id="r1">1</a></sup></p>
 
         <figure class="figure reveal">
           <figcaption class="fig-cap"><b>Figure 1.</b> Phase&nbsp;0, concept table (excerpt). Topic: <i>Does mindfulness training reduce exam anxiety in university students?</i> Master's thesis, psychology.</figcaption>
@@ -207,14 +209,14 @@ AND (english[la] OR german[la])</pre>
       </div>
     </section>
 
-    <!-- 4 COMPARISON -->
+    <!-- COMPARISON -->
     <section class="section alt" aria-labelledby="cmp-h">
       <div class="wrap">
-        <header class="sec-head reveal">
-          <span class="sec-num">4.</span>
-          <h2 id="cmp-h">One-line prompt vs. this prompt</h2>
+        <header class="sec-head center reveal">
+          <p class="kicker">Why not just ask ChatGPT?</p>
+          <h2 id="cmp-h">One-line prompt vs. this prompt.</h2>
+          <p class="sec-intro">We asked ChatGPT: <i>"Find sources for my bachelor's thesis on productivity effects of remote and hybrid work."</i> The sources it gave were real. What was missing is the part your methods chapter needs.<sup class="fn"><a href="#n2" id="r2">2</a></sup></p>
         </header>
-        <p class="sec-intro reveal">We asked ChatGPT: <i>"Find sources for my bachelor's thesis on productivity effects of remote and hybrid work."</i> The sources it gave were real. What was missing is the part your methods chapter needs.<sup class="fn"><a href="#n2" id="r2">2</a></sup></p>
         <div class="table-scroll reveal" tabindex="0" role="region" aria-label="Comparison table, scrollable">
           <table class="booktabs compare">
             <thead>
@@ -231,41 +233,75 @@ AND (english[la] OR german[la])</pre>
             </tbody>
           </table>
         </div>
-        <ol class="notes" start="2">
-          <li id="n2">ChatGPT, shared chat, retrieved 30&nbsp;Oct 2026. Model not shown in the shared link. <a href="#r2" aria-label="Back to text">↩</a></li>
+        <ol class="notes">
+          <li id="n2" value="2">ChatGPT, shared chat, retrieved 30&nbsp;Oct 2026. Model not shown in the shared link. <a href="#r2" aria-label="Back to text">↩</a></li>
         </ol>
       </div>
     </section>
 
-    <!-- 5 REVIEW -->
+    <!-- REVIEW -->
     <section class="section" id="review" aria-labelledby="review-h">
       <div class="wrap narrow">
-        <header class="sec-head reveal">
-          <span class="sec-num">5.</span>
-          <h2 id="review-h">What a user says</h2>
+        <header class="sec-head center reveal">
+          <p class="kicker">What a user says</p>
+          <h2 id="review-h" class="visually-hidden">Review</h2>
         </header>
         <figure class="review reveal">
           <p class="review-pull">“A genuinely useful tool that turns a messy first research phase into a documented process.”</p>
-          <blockquote class="review-text">
-            <p>I ran this literature search prompt twice for my master's thesis in psychology, using Claude with full access to my computer. It's designed especially for beginners: if you have never worked with a reference manager like Zotero, it guides you through installation and setup step by step. Since I already had everything in place, those steps were simply skipped.</p>
-            <p>In one run it searched PubMed and Europe PMC, merged around 600 unique records, flagged duplicates, sorted everything into Zotero and even drafted the search description for my methods section.</p>
-            <p>What convinced me most: strict rules against fabricated references, a clear split between what the AI does and what I do, and a methodical approach to keywords and tested search strings.</p>
-            <p>Be prepared to invest time in screening, as the search casts a wide net, and licensed databases like PsycInfo still need to be searched by hand. Overall, a genuinely useful tool that turns a messy first research phase into a documented process.</p>
-          </blockquote>
-          <figcaption class="review-by"><b>Lukas, 23</b> · M.Sc. Psychology<sup class="fn"><a href="#n3" id="r3">3</a></sup></figcaption>
+          <figcaption class="review-by"><span class="avatar" aria-hidden="true">L</span><span><b>Lukas, 23</b><br>M.Sc. Psychology<sup class="fn"><a href="#n3" id="r3">3</a></sup></span></figcaption>
+          <details class="review-more">
+            <summary>Read the full review</summary>
+            <blockquote class="review-text">
+              <p>I ran this literature search prompt twice for my master's thesis in psychology, using Claude with full access to my computer. It's designed especially for beginners: if you have never worked with a reference manager like Zotero, it guides you through installation and setup step by step. Since I already had everything in place, those steps were simply skipped.</p>
+              <p>In one run it searched PubMed and Europe PMC, merged around 600 unique records, flagged duplicates, sorted everything into Zotero and even drafted the search description for my methods section.</p>
+              <p>What convinced me most: strict rules against fabricated references, a clear split between what the AI does and what I do, and a methodical approach to keywords and tested search strings.</p>
+              <p>Be prepared to invest time in screening, as the search casts a wide net, and licensed databases like PsycInfo still need to be searched by hand. Overall, a genuinely useful tool that turns a messy first research phase into a documented process.</p>
+            </blockquote>
+          </details>
         </figure>
-        <ol class="notes" start="3">
-          <li id="n3">Lukas is a friend of the author. He got free access to the prompt in exchange for honest feedback and was not paid for this review. Published unedited with his permission, November 2026. <a href="#r3" aria-label="Back to text">↩</a></li>
+        <ol class="notes">
+          <li id="n3" value="3">Lukas is a friend of the author. He got free access to the prompt in exchange for honest feedback and was not paid for this review. Published unedited with his permission, November 2026. <a href="#r3" aria-label="Back to text">↩</a></li>
         </ol>
       </div>
     </section>
 
-    <!-- 6 FOR WHOM -->
-    <section class="section alt" aria-labelledby="fit-h">
+    <!-- OFFER -->
+    <section class="section alt" id="offer" aria-labelledby="offer-h">
       <div class="wrap">
-        <header class="sec-head reveal">
-          <span class="sec-num">6.</span>
-          <h2 id="fit-h">Is it for you?</h2>
+        <header class="sec-head center reveal">
+          <p class="kicker">What you get</p>
+          <h2 id="offer-h">Everything for a documented search. For the price of a coffee.</h2>
+        </header>
+        <div class="offer reveal">
+          <div class="offer-list">
+            <ul class="inside-list">
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7"/></svg><span><b>The full 7-phase prompt</b> as a PDF, ready to paste into ChatGPT or Claude</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>Nine fixed rules:</b> no invented sources, licence terms, copyright, privacy, academic integrity</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L20 20"/></svg><span><b>Works with or without web search.</b> Without it, terms are marked "(verify)" and strings "not tested"</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6l2 2 3-3M5 13l2 2 3-3"/><path d="M13 7h6M13 14h6"/></svg><span><b>A checklist after every phase,</b> so you always know where you are</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span><b>Short quick-start guide</b> on the first pages of the PDF</span></li>
+            </ul>
+          </div>
+          <aside class="price-card" aria-label="Price">
+            <img class="price-img" src="img/produkt.jpg" width="720" height="1018" loading="lazy" alt="Cover page of the Literature Review Assistant PDF you receive after purchase.">
+            <p class="price"><span class="price-amount">$4.99</span><span class="price-note">one-time · plus tax where applicable</span></p>
+            <a class="btn btn-cta btn-lg btn-block" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get the prompt</a>
+            <ul class="assure dark">
+              <li>PDF by email right after payment</li>
+              <li>Secure checkout via Stripe</li>
+              <li>Problem? <a href="kontakt.html">Write to me</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR WHOM -->
+    <section class="section" aria-labelledby="fit-h">
+      <div class="wrap">
+        <header class="sec-head center reveal">
+          <p class="kicker">Is it for you?</p>
+          <h2 id="fit-h">Made for students who want to do it properly.</h2>
         </header>
         <div class="cards two">
           <div class="card reveal">
@@ -287,48 +323,17 @@ AND (english[la] OR german[la])</pre>
             </ul>
           </div>
         </div>
-        <div class="inside reveal">
-          <h3>What you get</h3>
-          <ul class="inside-list">
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7"/></svg><span>The full prompt, ready to paste into ChatGPT or Claude</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span>Nine fixed rules: no invented sources, licence terms, copyright, privacy, academic integrity</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L20 20"/></svg><span>Works with or without web search. Without it, terms are marked "(verify)" and strings "not tested"</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6l2 2 3-3M5 13l2 2 3-3"/><path d="M13 7h6M13 14h6"/></svg><span>A checklist at the end of every phase, so you always know where you are</span></li>
-          </ul>
-        </div>
       </div>
     </section>
 
-    <!-- 7 LEAD MAGNET -->
-    <section class="section" id="cheatsheet" aria-labelledby="lead-h">
-      <div class="wrap lead-grid">
-        <div class="reveal">
-          <header class="sec-head">
-            <span class="sec-num">7.</span>
-            <h2 id="lead-h">Free: Search String Cheat Sheet</h2>
-          </header>
-          <p>One page with Boolean operators, truncation, phrase search and field tags for PubMed, Scopus, Web of Science, EBSCO and Google Scholar. Print it, pin it next to your screen.</p>
-        </div>
-        <!-- TODO: action auf den Formular-Endpunkt des Newsletter-Anbieters setzen (z. B. Brevo oder MailerLite, Double-Opt-in aktivieren), dann "disabled" entfernen und data-ready="true" setzen. -->
-        <form class="lead-form reveal" action="[FORM_ENDPOINT]" method="post" data-ready="false">
-          <label for="email">Your email</label>
-          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@university.edu" required disabled>
-          <label class="consent">
-            <input type="checkbox" name="consent" required disabled>
-            <span>Send me the cheat sheet and occasional tips on literature searching. I can unsubscribe at any time. See the <a href="datenschutz.html">privacy policy</a>.</span>
-          </label>
-          <button class="btn" type="submit" disabled>Coming soon</button>
-          <p class="fine">You'll get a confirmation email first (double opt-in).</p>
-        </form>
-      </div>
-    </section>
+    <!-- Lead-Magnet vorerst ausgeblendet, bis ein Newsletter-Anbieter angebunden ist (Formular siehe Git-Historie, Commit 9923405). -->
 
-    <!-- 8 FAQ -->
+    <!-- FAQ -->
     <section class="section alt" id="faq" aria-labelledby="faq-h">
       <div class="wrap narrow">
-        <header class="sec-head reveal">
-          <span class="sec-num">8.</span>
-          <h2 id="faq-h">Questions</h2>
+        <header class="sec-head center reveal">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-h">Questions before you buy.</h2>
         </header>
         <div class="faq reveal">
           <details><summary>Is this allowed at my university?</summary><p>That depends on your institution's rules on AI use. The prompt reminds you to check them and to disclose AI use where required. It never queries licensed databases for you and never downloads paywalled PDFs.</p></details>
@@ -338,21 +343,32 @@ AND (english[la] OR german[la])</pre>
           <details><summary>Do I need Zotero experience?</summary><p>No. Phase&nbsp;2 walks you through installing and setting up Zotero with exact menu paths.</p></details>
           <details><summary>Does the AI download paywalled PDFs for me?</summary><p>No. You search licensed databases yourself. The prompt never suggests shadow libraries and points you to legal ways in: open-access versions, interlibrary loan or emailing the author.</p></details>
           <details><summary>Will it write my thesis?</summary><p>No. It plans and documents your literature search. Reading, judging and writing stay with you.</p></details>
+          <details><summary>How do I get the prompt after paying?</summary><p>Right after checkout you see a download link, and the PDF arrives by email to the address you entered at checkout.</p></details>
           <details><summary>Can I get a refund?</summary><p>Checkout and payment run through Stripe, our reseller and merchant of record, so their terms apply. If something doesn't work for you, <a href="kontakt.html">write to me</a> and we'll sort it out.</p></details>
         </div>
       </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final">
+    <section class="final" id="final">
+      <picture class="final-media">
+        <source srcset="img/abschluss.webp" type="image/webp">
+        <img src="img/abschluss.jpg" width="1536" height="1024" loading="lazy" alt="">
+      </picture>
       <div class="wrap narrow final-inner reveal">
-        <img class="final-cover" src="cover.jpg" width="600" height="300" loading="lazy" alt="Cover: Literature Review Done Right – for Claude and ChatGPT. Search, Zotero, APA list.">
-        <h2>Start your search with a plan.</h2>
+        <h2>Start your search with a plan tonight.</h2>
         <p>Seven phases, tested strings, sources you can check.</p>
-        <a class="btn btn-light" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get the prompt – $4.99</a>
+        <a class="btn btn-cta btn-lg" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get the prompt – $4.99</a>
+        <p class="fine light">One-time payment · secure checkout via Stripe · PDF by email</p>
       </div>
     </section>
   </main>
+
+  <!-- Kaufbalken mobil: erscheint nach dem Hero, verschwindet im Abschluss-CTA -->
+  <div class="buybar" id="buybar" aria-hidden="true">
+    <div class="buybar-txt"><b>Literature Review Assistant</b><span>$4.99 · one-time</span></div>
+    <a class="btn btn-cta" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener" tabindex="-1">Get it</a>
+  </div>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
