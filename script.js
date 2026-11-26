@@ -35,6 +35,11 @@ document.querySelectorAll("[data-listing]").forEach((a) => {
   a.addEventListener("click", () => track("click_buy", { version: a.dataset.listing }));
 });
 
+// Klick auf „Try Phase 0 free“ (getrennt von Kauf-Klicks gezählt)
+document.querySelectorAll("[data-free]").forEach((a) => {
+  a.addEventListener("click", () => track("click_free_phase0", { version: a.dataset.free }));
+});
+
 // ----- Suchstring hervorheben und kopieren -----
 function escapeHtml(s) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -55,6 +60,7 @@ document.querySelectorAll("[data-copy]").forEach((btn) => {
     const pre = document.querySelector(btn.dataset.copy);
     try {
       await navigator.clipboard.writeText(pre.dataset.raw || pre.textContent);
+      if (pre.id === "phase0") track("copy_phase0");
       btn.textContent = "Copied";
     } catch {
       btn.textContent = "Select and copy";
@@ -176,7 +182,7 @@ if ("IntersectionObserver" in window) {
       gcEvent(`abschnitt-${en.target.id}`, "Abschnitt gesehen");
     });
   }, { rootMargin: "-45% 0px -45% 0px" });
-  ["review", "how", "example", "offer", "faq", "final"].forEach((id) => {
+  ["review", "how", "free", "example", "offer", "faq", "final"].forEach((id) => {
     const el = document.getElementById(id);
     if (el) so.observe(el);
   });

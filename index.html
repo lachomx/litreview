@@ -68,7 +68,7 @@
           <p class="lead">One prompt takes you from a vague topic to tested search strings, a tidy Zotero library and a reference list in APA&nbsp;7, in seven guided phases. Every source comes with a DOI, PMID or ISBN, or it gets flagged.</p>
           <div class="cta-row">
             <a class="btn btn-cta btn-lg" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get the prompt – $4.99</a>
-            <a class="link-arrow light" href="#example">See real output</a>
+            <a class="btn btn-ghost-light btn-lg" href="#free" data-free="hero">Try Phase 0 free</a>
           </div>
           <ul class="assure">
             <li>One-time payment</li>
@@ -172,6 +172,48 @@
     </section>
 
     <!-- EXAMPLE -->
+    <!-- GRATIS PHASE 0 -->
+    <section class="section" id="free" aria-labelledby="free-h">
+      <div class="wrap">
+        <header class="sec-head center reveal">
+          <p class="kicker">Free</p>
+          <h2 id="free-h">Try Phase 0 free.</h2>
+          <p class="sec-intro">Copy this short prompt into ChatGPT or Claude and fill in the brackets. You get a searchable research question, a concept table with synonyms and thesaurus terms, and include/exclude criteria. No email, no sign-up.</p>
+        </header>
+        <div class="code-wrap reveal">
+          <div class="code-bar"><span>Phase 0 – Sharpen the question (free)</span><button class="copy" type="button" data-copy="#phase0">Copy</button></div>
+          <pre class="code code-prompt" id="phase0"># ROLE
+You are an expert academic librarian and research-methods coach. Do only Phase 0 of a literature search: turn my topic into a precise, searchable research question.
+
+# INPUTS
+- Research topic: [RESEARCH_TOPIC]
+- Purpose and level: [PURPOSE]  (e.g., bachelor's thesis, master's thesis, seminar paper)
+- Field of study: [FIELD_OF_STUDY]
+- Criteria, optional: [CRITERIA]  (default: last 10 years, English, peer-reviewed)
+
+# RULES
+1. No invented sources or thesaurus IDs. If you have web access, check every controlled-vocabulary term in the official thesaurus (e.g., MeSH, APA Thesaurus, ERIC) and give the ID as proof. Otherwise mark it "(verify)".
+2. Look up each core term AND its main synonyms; the preferred heading is often a synonym.
+3. Short sentences a first-year student can follow. Plain Markdown tables.
+
+# DELIVER
+- A framework that fits the field (PICO/PECO for health, PEO for qualitative work, SPIDER for mixed methods, concept-based otherwise), as a table, with one sentence on the choice.
+- The topic as one precise, searchable question.
+- Concept table: each core concept with synonyms, related terms, spelling variants and controlled vocabulary.
+- Vocabulary pitfalls (new descriptors, ambiguous terms that bring noise).
+- Include/exclude table: time, language, publication type, population, intervention/exposure, outcome, design.
+- Numbered open decisions, each with your suggestion, and a sample reply (e.g., "1 OK, 2 only RCTs").
+- End with: "Phase 0 done. Phases 1-6 (access, Zotero, tested search strings, import, citing in Word) are in the full prompt at litreviewcoach.com."
+
+Start now with Phase 0.</pre>
+        </div>
+        <div class="inline-cta reveal">
+          <p class="free-next">Happy with your question? The full prompt continues with access, Zotero, tested search strings and your reference list.</p>
+          <a class="btn btn-cta" data-listing="claude" href="https://buy.stripe.com/3cIeVf79a9Mi5iaf4o0Jq00" target="_blank" rel="noopener">Get all seven phases – $4.99</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="example" aria-labelledby="example-h">
       <div class="wrap">
         <header class="sec-head center reveal">
