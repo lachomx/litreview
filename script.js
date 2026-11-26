@@ -154,9 +154,23 @@ if (CONFIG.goatcounterCode) {
   setTimeout(() => clearInterval(flush), 20000); // Blocker aktiv: aufgeben
 }
 
-// Kauf-Klick: GoatCounter immer, Pixel nur mit Einwilligung
+// Herkunft des Besuchs (utm_source), beim ersten Aufruf gemerkt; ohne Quelle "direkt"
+const QUELLE = (() => {
+  const roh = new URLSearchParams(location.search).get("utm_source");
+  let q = roh;
+  try {
+    if (roh) sessionStorage.setItem("lra-quelle", roh);
+    else q = sessionStorage.getItem("lra-quelle");
+  } catch { /* privater Modus */ }
+  q = (q || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40);
+  return q || "direkt";
+})();
+const KLICK_EREIGNISSE = ["click_buy", "click_free_phase0", "copy_phase0"];
+
+// Kauf-Klick: GoatCounter immer (Klicks mit Herkunft), Pixel nur mit Einwilligung
 function track(name, data = {}) {
-  gcEvent([name, data.version].filter(Boolean).join("-").replace(/_/g, "-"), name);
+  const quelle = KLICK_EREIGNISSE.includes(name) ? QUELLE : null;
+  gcEvent([name, data.version, quelle].filter(Boolean).join("-").replace(/_/g, "-"), name);
   if (!pixelsLoaded) return;
   if (window.fbq) fbq("trackCustom", name, data);
   if (window.ttq) ttq.track(name === "click_buy" ? "ClickButton" : name, data);
