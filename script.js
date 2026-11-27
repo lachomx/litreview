@@ -131,7 +131,17 @@ function loadPixels() {
 
 // ----- Besucherzählung ohne Cookies (GoatCounter) -----
 // Speichert nichts im Browser und keine IP-Adressen, deshalb ohne Einwilligung (Datenschutz Abschnitt 6).
-if (CONFIG.goatcounterCode) {
+// Eigene Besuche ausschließen (Betreiber): einmal pro Browser/Gerät litreviewcoach.com/?nicht-zaehlen aufrufen;
+// ?wieder-zaehlen hebt es auf. Nur dann wird lokal "skipgc" gesetzt (GoatCounter-Standard), sonst nichts.
+const NICHT_ZAEHLEN = (() => {
+  try {
+    const p = new URLSearchParams(location.search);
+    if (p.has("nicht-zaehlen")) localStorage.setItem("skipgc", "t");
+    if (p.has("wieder-zaehlen")) localStorage.removeItem("skipgc");
+    return localStorage.getItem("skipgc") === "t";
+  } catch { return false; } // privater Modus
+})();
+if (CONFIG.goatcounterCode && !NICHT_ZAEHLEN) {
   const gc = document.createElement("script");
   gc.async = true;
   gc.src = "https://gc.zgo.at/count.js";
