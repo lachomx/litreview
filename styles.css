@@ -370,8 +370,55 @@ sup.fn a { text-decoration: none; font-weight: 600; }
   .buybar .btn { min-height: 46px; padding: 0 22px; }
   .site-footer { padding-bottom: 96px; }
 }
-@media (max-width: 400px) {
-  .brand span { display: none; }
+.brand-short { display: none; }
+
+/* Mobil-Feinschliff (27.11.2026): mehr Luft, Augenbrauen-Zeile nicht mehr auf dem Foto, gut lesbar */
+@media (max-width: 760px) {
+  body { line-height: 1.7; }
+  .site-header { background: var(--navy); }
+  .brand-long { display: none; }
+  .brand-short { display: inline; font-size: 1.05rem; letter-spacing: .01em; }
+
+  /* Hero: Foto oben, Text komplett darunter auf ruhigem Navy */
+  .hero-media { aspect-ratio: 16 / 11; }
+  .hero-media::after { background: linear-gradient(0deg, var(--navy) 0%, rgba(15,27,51,0) 28%); }
+  .hero-inner { margin-top: 0; padding-top: 28px; padding-bottom: 56px; gap: 40px; }
+  .eyebrow { display: inline-block; color: #fff; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 8px 14px; font-size: .74rem; letter-spacing: .06em; line-height: 1.45; margin-bottom: 22px; }
+  .hero h1 { font-size: 2.25rem; line-height: 1.14; }
+  .lead { font-size: 1.06rem; line-height: 1.7; color: rgba(255,255,255,.9); margin: 22px 0 32px; }
+  .cta-row { flex-direction: column; align-items: stretch; gap: 14px; margin-bottom: 26px; }
+  .assure { flex-direction: column; align-items: flex-start; gap: 10px; font-size: .92rem; color: rgba(255,255,255,.85); }
+  .proof-stack { gap: 12px; }
+  .proof { padding: 14px 16px; }
+
+  /* Vertrauensleiste */
+  .trust-list li { padding: 22px 12px; }
+
+  /* Abschnitte: mehr Abstand zwischen Blöcken */
+  .section { padding: 76px 0; }
+  .sec-head { margin-bottom: 36px; }
+  .sec-head.center { text-align: left; }
+  .sec-intro { margin-left: 0; }
+  .kicker { margin-bottom: 14px; }
+  h2 { line-height: 1.2; }
+  .cards { gap: 18px; }
+  .card { padding: 26px 22px; }
+  .timeline { gap: 14px; }
+  .timeline li { grid-template-columns: 42px 1fr; gap: 14px; padding: 20px 18px; }
+  .t-num { width: 40px; height: 40px; line-height: 40px; }
+  .timeline h3 { margin-bottom: 6px; }
+  .inline-cta { margin-top: 40px; }
+  .inline-cta .btn { width: 100%; }
+  .figure { margin-bottom: 64px; }
+  .fig-cap { margin-bottom: 18px; }
+  .review-pull { font-size: 1.45rem; }
+  .review-text { padding: 22px 20px; }
+  .inside-list { gap: 26px; }
+  .price-card { padding: 28px 22px; }
+  .faq summary { padding: 22px 36px 22px 0; }
+  .final h2 { font-size: 2rem; }
+  .footer-inner nav { gap: 14px 20px; }
+  .footer-inner nav a, .linklike { min-height: 32px; display: inline-flex; align-items: center; }
 }
 
 /* Gratis Phase 0 */
